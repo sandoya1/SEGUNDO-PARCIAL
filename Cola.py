@@ -1,4 +1,5 @@
-
+#TEMA: COLA
+#ISAIAS RAFAEL SANDOYA VARGAS 
 
 class Cola_1:
     def __init__(self,tamanio):
