@@ -1,39 +1,52 @@
-class Cola:
-    def __init__(self,tamaño):
-        self.__lista=[]
-        self.__tope=0
-        self.size=tamaño
 
-    def empty(self):
-        return self.__tope==0
+
+class Cola_1:
+    def __init__(self,tamanio):
+        self.lista=[]
+        self.size=tamanio
+        self.top=0
 
     def push(self,dato):
-        if self.__tope < self.size:
-            self.__lista= [dato]+self.__lista
-            self.__tope+=1
-        else: print("ERROR DE INGRESO: lista llena")
-    
+        if self.top <self.size:
+            self.lista = self.lista + [dato]
+            self.top += 1
+            return True
+        else:
+            return False
+
     def pop(self):
         if self.empty():
-            return -1
+            return None
         else:
-            top= self.__lista[0]
-            self.__tope-=1
-            self.__lista= self.__lista[0]
+            top = self.lista[0]
+            self.lista = self.lista[1:]
+            self.top -= 1
             return top
-    
+            
     def show(self):
-        for ele in range(0,self.__tope-1):
-            print("[{}]".format(self.__lista[ele]))
-
-
-
-pila = Cola(4)
-pila.push(4)
-pila.push(6)
-print(pila.pop())
-pila.show()
-print(pila.pop())
-pila.show()
-print(pila.pop())
-pila.show()
+        for top in range(self.top):
+            print("[{}]".format(self.lista[top]))
+        
+    def longitud(self):
+        return self.top
+                
+    def empty(self):
+        if self.top == 0:
+            return True
+        else:
+            return False
+# cola=Cola_1(3)
+# print(cola.push(20))
+# print(cola.push(25))
+# print(cola.push(30))
+# print(cola.push(35))
+# cola.show()
+# dato=cola.pop()
+# if dato: print("El dato eliminado es: {}".format(dato))
+# else: print("La lista esta vacia")
+# input("Presione una tecla para continuar...")
+# dato=cola.pop()
+# if dato: print("El dato eliminado es: {}".format(dato))
+# else: print("La lista esta vacia")
+# input("Presione una tecla para continuar...")
+# cola.show()
