@@ -1,4 +1,6 @@
-
+#EJERCICIO EN CLASE 03/09/2021
+#TEMA: ARCHIVOS DE UNA COMPRA
+#ISAIAS RAFAEL SANDOYA VARGAS 
 
 class archivo:
     def __init__(self,nombreArchivo,separador=''):
